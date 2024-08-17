@@ -49,7 +49,6 @@ G.dialogueButton.addEventListener("click", (evt) => {
 
 G.searchButton.addEventListener("click", (evt) => {
 	processEnter();
-//	evt.preventDefault();
 });
 
 document.addEventListener("keydown",  (evt) => {
@@ -82,17 +81,14 @@ G.kanjiSelector.addEventListener("click", (evt) => {
 	G.yomiField.value = "";
 	G.yomiField.focus();
 	processEnter();
-//	evt.preventDefault();
 });
 
 G.prevPageButton.addEventListener("click", (evt) => {
 	prevPage();
-//	evt.preventDefault();
 });
 
 G.nextPageButton.addEventListener("click", (evt) => {
 	nextPage();
-//	evt.preventDefault();
 });
 
 
@@ -108,11 +104,19 @@ function processEnter() {
 	let phon = G.yomiField.value;
 	if (phon in G.onKunDic) {
 		let candidates = G.onKunDic[phon].split(/:/);
-		G.kanjiSelector.size = Math.min(candidates.length, 10);
+//		G.kanjiSelector.size = Math.min(candidates.length, 10);
+		G.kanjiSelector.size = candidates.length
+		let tempArray = [];
 		for (let ch of candidates) {
+			tempArray.push([ch + ": " + kanjiData[ch][1], kanjiData[ch][0], kanjiData[ch][2]]);
+		}
+		tempArray.sort((a, b) => {
+			return Number(a[1]) - Number(b[1]);
+		});
+		for (item of tempArray) {
 			let col = document.createElement("option");
-			col.text = ch + ": " + kanjiData[ch][1];
-			col.value = kanjiData[ch][2];
+			col.text = item[0];
+			col.value = item[2];
 			G.kanjiSelector.appendChild(col);
 		}
 	}
