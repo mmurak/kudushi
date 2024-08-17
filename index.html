@@ -4,20 +4,21 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 		<link rel="shortcut icon" href="kiwi-bird.png">
 		<link rel="stylesheet" href="./kudushijiJiten.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	</head>
 	<body id="Body">
 		<div id="Controller">
-			<input type="button" value="表紙+序" id="Preface"/>
-			<input type="button" value="部首選択" id="DialogueButton"/>
-			<input type="textfield" id="YomiField" />
-			<input type="button" value="検索 (Enter)" id="SearchButton"/>
-			<span id="Symbol"></span>
+			<input type="button" value="表紙+序" id="Preface" class="ctrl" />
+			<input type="button" value="部首選択" id="DialogueButton" class="ctrl" />
+			<input type="textfield" id="YomiField" class="ctrl" />
+			<input type="button" value="検索 (Enter)" id="SearchButton" class="ctrl" />
+			<span id="Symbol" class="ctrl" ></span>
 			<br>
-			<select id="KanjiSelector">
+			<select id="KanjiSelector" class="ctrl" >
 			</select>
 			<br>
-			<input type="button" value="前ページ (Shift+↑)" id="PrevPageButton"/>
-			<input type="button" value="次ページ (Shift+↓)" id="NextPageButton"/>
+			<input type="button" value="前ページ (Shift+↑)" id="PrevPageButton" class="ctrl" />
+			<input type="button" value="次ページ (Shift+↓)" id="NextPageButton" class="ctrl" />
 			<img id="ImageArea"></img>
 		</div>
 

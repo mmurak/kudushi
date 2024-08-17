@@ -87,3 +87,14 @@
 .checkbox-wrapper .toggle-input:checked + .toggle-label:before {
 	left: calc(var(--toggleWidth) - var(--switchSize) + 10px);
 }
+
+@media screen and (max-width: 1020px) {
+	.ctrl{
+		font-size: 150%;
+	}
+}
+@media screen and (max-width: 767px) {
+	.ctrl{
+		font-size: 200%;
+	}
+}

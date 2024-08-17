@@ -49,7 +49,7 @@ G.dialogueButton.addEventListener("click", (evt) => {
 
 G.searchButton.addEventListener("click", (evt) => {
 	processEnter();
-	evt.preventDefault();
+//	evt.preventDefault();
 });
 
 document.addEventListener("keydown",  (evt) => {
@@ -75,7 +75,6 @@ document.addEventListener("keydown",  (evt) => {
 });
 
 G.kanjiSelector.addEventListener("click", (evt) => {
-	console.log(G.kanjiSelector.value);
 	G.symbol.innerHTML = G.kanjiSelector.options[G.kanjiSelector.selectedIndex].label;
 	G.currentPage = convertToPhysical(Number(G.kanjiSelector.value), 77);
 	G.kanjiSelector.blur();
@@ -83,17 +82,17 @@ G.kanjiSelector.addEventListener("click", (evt) => {
 	G.yomiField.value = "";
 	G.yomiField.focus();
 	processEnter();
-	evt.preventDefault();
+//	evt.preventDefault();
 });
 
 G.prevPageButton.addEventListener("click", (evt) => {
 	prevPage();
-	evt.preventDefault();
+//	evt.preventDefault();
 });
 
 G.nextPageButton.addEventListener("click", (evt) => {
 	nextPage();
-	evt.preventDefault();
+//	evt.preventDefault();
 });
 
 
