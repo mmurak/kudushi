@@ -1,0 +1,269 @@
+<html>
+	<head>
+		<title>漢字くづし方辭典（内海弘蔵編／玉木愛石書）検索</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+		<link rel="shortcut icon" href="kiwi-bird.png">
+		<link rel="stylesheet" href="./kudushijiJiten.css">
+	</head>
+	<body id="Body">
+		<div id="Controller">
+			<input type="button" value="表紙+序" id="Preface"/>
+			<input type="button" value="部首選択" id="DialogueButton"/>
+			<input type="textfield" id="YomiField" />
+			<input type="button" value="検索 (Enter)" id="SearchButton"/>
+			<span id="Symbol"></span>
+			<br>
+			<select id="KanjiSelector">
+			</select>
+			<br>
+			<input type="button" value="前ページ (Shift+↑)" id="PrevPageButton"/>
+			<input type="button" value="次ページ (Shift+↓)" id="NextPageButton"/>
+			<img id="ImageArea"></img>
+		</div>
+
+		<div id="DialogueBox">
+			<div style="display:flex">
+				<div>索引&nbsp;</div>
+				<div class="checkbox-wrapper">
+					<input class="toggle-input" id="slider" type="checkbox" checked></input>
+					<label class="toggle-label" for="slider"></label>
+				</div>
+				<div>&nbsp;本文</div>
+			</div>
+			<hr>
+
+<a href="javascript:clicked('一: いち', 1, 1)" class="bushu" title="いち">一</a> 
+<a href="javascript:clicked('丨: ぼう', 1, 3)" class="bushu" title="ぼう">丨</a> 
+<a href="javascript:clicked('丶: てん', 1, 3)" class="bushu" title="てん">丶</a> 
+<a href="javascript:clicked('丿: の', 2, 4)" class="bushu" title="の">丿</a> 
+<a href="javascript:clicked('乙: おつ', 2, 5)" class="bushu" title="おつ">乙</a> 
+<a href="javascript:clicked('亅: はねぼう', 2, 6)" class="bushu" title="はねぼう">亅</a> 
+<br>
+<a href="javascript:clicked('二: に', 2, 7)" class="bushu" title="に">二</a> 
+<a href="javascript:clicked('亠: なべぶた', 2, 8)" class="bushu" title="なべぶた">亠</a> 
+<a href="javascript:clicked('人: ひと', 3, 10)" class="bushu" title="ひと">人</a> 
+<a href="javascript:clicked('儿: ひとあし', 8, 29)" class="bushu" title="ひとあし">儿</a> 
+<a href="javascript:clicked('入: いる', 8, 31)" class="bushu" title="いる">入</a> 
+<a href="javascript:clicked('八: はち', 9, 31)" class="bushu" title="はち">八</a> 
+<a href="javascript:clicked('冂: えんがまえ', 9, 33)" class="bushu" title="えんがまえ">冂</a> 
+<a href="javascript:clicked('冖: わかんむり', 9, 33)" class="bushu" title="わかんむり">冖</a> 
+<a href="javascript:clicked('冫: にすい', 9, 34)" class="bushu" title="にすい">冫</a> 
+<a href="javascript:clicked('几: つくえ', 10, 36)" class="bushu" title="つくえ">几</a> 
+<a href="javascript:clicked('凵: うけばこ', 10, 36)" class="bushu" title="うけばこ">凵</a> 
+<a href="javascript:clicked('刀: かたな', 10, 37)" class="bushu" title="かたな">刀</a> 
+<a href="javascript:clicked('力: ちから', 11, 42)" class="bushu" title="ちから">力</a> 
+<a href="javascript:clicked('勹: つつみがまえ', 12, 46)" class="bushu" title="つつみがまえ">勹</a> 
+<a href="javascript:clicked('匕: さじのひ', 13, 47)" class="bushu" title="さじのひ">匕</a> 
+<a href="javascript:clicked('匚: はこがまえ', 13, 47)" class="bushu" title="はこがまえ">匚</a> 
+<a href="javascript:clicked('匸: かくしがまえ', 13, 48)" class="bushu" title="かくしがまえ">匸</a> 
+<a href="javascript:clicked('十: じゅう', 13, 49)" class="bushu" title="じゅう">十</a> 
+<a href="javascript:clicked('卜: ぼくのと', 13, 50)" class="bushu" title="ぼくのと">卜</a> 
+<a href="javascript:clicked('卩: ふしづくり', 14, 51)" class="bushu" title="ふしづくり">卩</a> 
+<a href="javascript:clicked('厂: がんだれ', 14, 52)" class="bushu" title="がんだれ">厂</a> 
+<a href="javascript:clicked('厶: む', 14, 53)" class="bushu" title="む">厶</a> 
+<a href="javascript:clicked('又: また', 14, 54)" class="bushu" title="また">又</a> 
+<br>
+<a href="javascript:clicked('口: くち', 15, 55)" class="bushu" title="くち">口</a> 
+<a href="javascript:clicked('囗: くにがまえ', 20, 74)" class="bushu" title="くにがまえ">囗</a> 
+<a href="javascript:clicked('土: つち', 21, 76)" class="bushu" title="つち">土</a> 
+<a href="javascript:clicked('士: さむらい', 23, 86)" class="bushu" title="さむらい">士</a> 
+<a href="javascript:clicked('夊: ふゆがしら', 24, 88)" class="bushu" title="ふゆがしら">夊</a> 
+<a href="javascript:clicked('夕: ゆうべ', 24, 88)" class="bushu" title="ゆうべ">夕</a> 
+<a href="javascript:clicked('大: だい', 24, 89)" class="bushu" title="だい">大</a> 
+<a href="javascript:clicked('女: おんな', 25, 92)" class="bushu" title="おんな">女</a> 
+<a href="javascript:clicked('子: こ', 27, 101)" class="bushu" title="こ">子</a> 
+<a href="javascript:clicked('宀: うかんむり', 28, 104)" class="bushu" title="うかんむり">宀</a> 
+<a href="javascript:clicked('寸: すん', 29, 111)" class="bushu" title="すん">寸</a> 
+<a href="javascript:clicked('小: ちいさい', 30, 112)" class="bushu" title="ちいさい">小</a> 
+<a href="javascript:clicked('尢: まげあし', 30, 113)" class="bushu" title="まげあし">尢</a> 
+<a href="javascript:clicked('尸: しかばね', 30, 113)" class="bushu" title="しかばね">尸</a> 
+<a href="javascript:clicked('屮: てつ', 31, 116)" class="bushu" title="てつ">屮</a> 
+<a href="javascript:clicked('山: やま', 31, 116)" class="bushu" title="やま">山</a> 
+<a href="javascript:clicked('巛: まがりがわ', 32, 122)" class="bushu" title="まがりがわ">巛</a> 
+<a href="javascript:clicked('工: たくみ', 33, 122)" class="bushu" title="たくみ">工</a> 
+<a href="javascript:clicked('己: おのれ', 33, 123)" class="bushu" title="おのれ">己</a> 
+<a href="javascript:clicked('巾: はば', 33, 124)" class="bushu" title="はば">巾</a> 
+<a href="javascript:clicked('干: ほす', 24, 128)" class="bushu" title="ほす">干</a> 
+<a href="javascript:clicked('幺: いとがしら', 24, 129)" class="bushu" title="いとがしら">幺</a> 
+<a href="javascript:clicked('广: まだれ', 24, 130)" class="bushu" title="まだれ">广</a> 
+<a href="javascript:clicked('廴: えんにょう', 25, 134)" class="bushu" title="えんにょう">廴</a> 
+<a href="javascript:clicked('廾: にじゅうあし', 26, 135)" class="bushu" title="にじゅうあし">廾</a> 
+<a href="javascript:clicked('弋: しきがまえ', 26, 135)" class="bushu" title="しきがまえ">弋</a> 
+<a href="javascript:clicked('弓: ゆみ', 26, 136)" class="bushu" title="ゆみ">弓</a> 
+<a href="javascript:clicked('彐: よ', 26, 138)" class="bushu" title="よ">彐</a> 
+<a href="javascript:clicked('彡: さんづくり', 27, 139)" class="bushu" title="さんづくり">彡</a> 
+<a href="javascript:clicked('彳: ぎょうにんべん', 27, 140)" class="bushu" title="ぎょうにんべん">彳</a> 
+<br>
+<a href="javascript:clicked('心: こころ', 28, 144)" class="bushu" title="こころ">心</a> 
+<a href="javascript:clicked('戈: かのほこ', 43, 163)" class="bushu" title="かのほこ">戈</a> 
+<a href="javascript:clicked('戶: とびらのと', 44, 166)" class="bushu" title="とびらのと">戶</a> 
+<a href="javascript:clicked('手: て', 44, 167)" class="bushu" title="て">手</a> 
+<a href="javascript:clicked('支: じゅうまた', 49, 186)" class="bushu" title="じゅうまた">支</a> 
+<a href="javascript:clicked('文: ぶん', 50, 190)" class="bushu" title="ぶん">文</a> 
+<a href="javascript:clicked('斗: とます', 50, 191)" class="bushu" title="とます">斗</a> 
+<a href="javascript:clicked('斤: きん', 50, 191)" class="bushu" title="きん">斤</a> 
+<a href="javascript:clicked('方: ほう', 51, 193)" class="bushu" title="ほう">方</a> 
+<a href="javascript:clicked('无: まげあし', 51, 194)" class="bushu" title="まげあし">无</a> 
+<a href="javascript:clicked('日: にち', 51, 195)" class="bushu" title="にち">日</a> 
+<a href="javascript:clicked('曰: ひらび', 53, 203)" class="bushu" title="ひらび">曰</a> 
+<a href="javascript:clicked('月: つき', 54, 205)" class="bushu" title="つき">月</a> 
+<a href="javascript:clicked('木: き', 54, 207)" class="bushu" title="き">木</a> 
+<a href="javascript:clicked('欠: かける', 61, 234)" class="bushu" title="かける">欠</a> 
+<a href="javascript:clicked('止: とめる', 62, 236)" class="bushu" title="とめる">止</a> 
+<a href="javascript:clicked('歹: いちた', 62, 238)" class="bushu" title="いちた">歹</a> 
+<a href="javascript:clicked('殳: るまた', 63, 240)" class="bushu" title="るまた">殳</a> 
+<a href="javascript:clicked('毋: なかれ', 63, 241)" class="bushu" title="なかれ">毋</a> 
+<a href="javascript:clicked('比: くらべるひ', 63, 242)" class="bushu" title="くらべるひ">比</a> 
+<a href="javascript:clicked('毛: け', 63, 242)" class="bushu" title="け">毛</a> 
+<a href="javascript:clicked('氏: うじ', 63, 243)" class="bushu" title="うじ">氏</a> 
+<a href="javascript:clicked('气: きがまえ', 64, 243)" class="bushu" title="きがまえ">气</a> 
+<a href="javascript:clicked('水: みず', 64, 244)" class="bushu" title="みず">水</a> 
+<a href="javascript:clicked('火: ひ', 71, 274)" class="bushu" title="ひ">火</a> 
+<a href="javascript:clicked('爪: つめ', 73, 282)" class="bushu" title="つめ">爪</a> 
+<a href="javascript:clicked('父: ちち', 74, 283)" class="bushu" title="ちち">父</a> 
+<a href="javascript:clicked('爻: めめ', 74, 284)" class="bushu" title="めめ">爻</a> 
+<a href="javascript:clicked('爿: しょうへん', 74, 284)" class="bushu" title="しょうへん">爿</a> 
+<a href="javascript:clicked('片: かた', 74, 285)" class="bushu" title="かた">片</a> 
+<a href="javascript:clicked('牙: きば', 74, 286)" class="bushu" title="きば">牙</a> 
+<a href="javascript:clicked('牛: うし', 74, 286)" class="bushu" title="うし">牛</a> 
+<a href="javascript:clicked('犬: いぬ', 75, 288)" class="bushu" title="いぬ">犬</a> 
+<br>
+<a href="javascript:clicked('玄: げん', 76, 293)" class="bushu" title="げん">玄</a> 
+<a href="javascript:clicked('玉: たま', 76, 293)" class="bushu" title="たま">玉</a> 
+<a href="javascript:clicked('瓜: うり', 78, 299)" class="bushu" title="うり">瓜</a> 
+<a href="javascript:clicked('瓦: かわら', 78, 299)" class="bushu" title="かわら">瓦</a> 
+<a href="javascript:clicked('甘: あまい', 78, 301)" class="bushu" title="あまい">甘</a> 
+<a href="javascript:clicked('生: うまれる', 78, 301)" class="bushu" title="うまれる">生</a> 
+<a href="javascript:clicked('用: もちいる', 79, 302)" class="bushu" title="もちいる">用</a> 
+<a href="javascript:clicked('田: た', 79, 302)" class="bushu" title="た">田</a> 
+<a href="javascript:clicked('疋: ひき', 80, 306)" class="bushu" title="ひき">疋</a> 
+<a href="javascript:clicked('疒: やまいだれ', 80, 306)" class="bushu" title="やまいだれ">疒</a> 
+<a href="javascript:clicked('癶: はつがしら', 82, 312)" class="bushu" title="はつがしら">癶</a> 
+<a href="javascript:clicked('白: しろ', 82, 313)" class="bushu" title="しろ">白</a> 
+<a href="javascript:clicked('皮: ひのかわ', 82, 314)" class="bushu" title="ひのかわ">皮</a> 
+<a href="javascript:clicked('皿: さら', 82, 315)" class="bushu" title="さら">皿</a> 
+<a href="javascript:clicked('目: め', 83, 317)" class="bushu" title="め">目</a> 
+<a href="javascript:clicked('矛: むのほこ', 84, 323)" class="bushu" title="むのほこ">矛</a> 
+<a href="javascript:clicked('矢: や', 84, 323)" class="bushu" title="や">矢</a> 
+<a href="javascript:clicked('石: いし', 84, 324)" class="bushu" title="いし">石</a> 
+<a href="javascript:clicked('示: しめす', 86, 331)" class="bushu" title="しめす">示</a> 
+<a href="javascript:clicked('禸: ぐうのあし', 87, 335)" class="bushu" title="ぐうのあし">禸</a> 
+<a href="javascript:clicked('禾: のぎ', 87, 335)" class="bushu" title="のぎ">禾</a> 
+<a href="javascript:clicked('穴: あな', 88, 341)" class="bushu" title="あな">穴</a> 
+<a href="javascript:clicked('立: たつ', 89, 344)" class="bushu" title="たつ">立</a> 
+<br>
+<a href="javascript:clicked('竹: たけ', 90, 346)" class="bushu" title="たけ">竹</a> 
+<a href="javascript:clicked('米: こめ', 92, 356)" class="bushu" title="こめ">米</a> 
+<a href="javascript:clicked('糸: いと', 93, 360)" class="bushu" title="いと">糸</a> 
+<a href="javascript:clicked('缶: ほとぎ', 97, 375)" class="bushu" title="ほとぎ">缶</a> 
+<a href="javascript:clicked('网: あみがしら', 98, 376)" class="bushu" title="あみがしら">网</a> 
+<a href="javascript:clicked('羊: ひつじ', 98, 378)" class="bushu" title="ひつじ">羊</a> 
+<a href="javascript:clicked('羽: はね', 99, 380)" class="bushu" title="はね">羽</a> 
+<a href="javascript:clicked('老: おい', 99, 383)" class="bushu" title="おい">老</a> 
+<a href="javascript:clicked('而: しかして', 99, 384)" class="bushu" title="しかして">而</a> 
+<a href="javascript:clicked('耒: らいすき', 99, 384)" class="bushu" title="らいすき">耒</a> 
+<a href="javascript:clicked('耳: みみ', 100, 385)" class="bushu" title="みみ">耳</a> 
+<a href="javascript:clicked('聿: ふでづくり', 100, 388)" class="bushu" title="ふでづくり">聿</a> 
+<a href="javascript:clicked('肉: にく', 100, 388)" class="bushu" title="にく">肉</a> 
+<a href="javascript:clicked('臣: しん', 103, 398)" class="bushu" title="しん">臣</a> 
+<a href="javascript:clicked('自: みずから', 103, 398)" class="bushu" title="みずから">自</a> 
+<a href="javascript:clicked('至: いたる', 103, 399)" class="bushu" title="いたる">至</a> 
+<a href="javascript:clicked('臼: うす', 103, 400)" class="bushu" title="うす">臼</a> 
+<a href="javascript:clicked('舌: した', 104, 401)" class="bushu" title="した">舌</a> 
+<a href="javascript:clicked('舛: ます', 104, 401)" class="bushu" title="ます">舛</a> 
+<a href="javascript:clicked('舟: ふね', 104, 402)" class="bushu" title="ふね">舟</a> 
+<a href="javascript:clicked('艮: こん', 105, 404)" class="bushu" title="こん">艮</a> 
+<a href="javascript:clicked('色: いろ', 105, 405)" class="bushu" title="いろ">色</a> 
+<a href="javascript:clicked('艸: くさ', 105, 405)" class="bushu" title="くさ">艸</a> 
+<a href="javascript:clicked('虍: とらがしら', 110, 424)" class="bushu" title="とらがしら">虍</a> 
+<a href="javascript:clicked('虫: むし', 110, 426)" class="bushu" title="むし">虫</a> 
+<a href="javascript:clicked('血: ち', 113, 435)" class="bushu" title="ち">血</a> 
+<a href="javascript:clicked('行: ぎょう', 113, 435)" class="bushu" title="ぎょう">行</a> 
+<a href="javascript:clicked('衣: ころも', 114, 437)" class="bushu" title="ころも">衣</a> 
+<a href="javascript:clicked('襾: にし', 116, 444)" class="bushu" title="にし">襾</a> 
+<br>
+<a href="javascript:clicked('見: みる', 116, 445)" class="bushu" title="みる">見</a> 
+<a href="javascript:clicked('角: つの', 116, 447)" class="bushu" title="つの">角</a> 
+<a href="javascript:clicked('言: ことば', 117, 448)" class="bushu" title="ことば">言</a> 
+<a href="javascript:clicked('谷: たに', 120, 462)" class="bushu" title="たに">谷</a> 
+<a href="javascript:clicked('豆: まめ', 120, 462)" class="bushu" title="まめ">豆</a> 
+<a href="javascript:clicked('豕: いのこ', 121, 463)" class="bushu" title="いのこ">豕</a> 
+<a href="javascript:clicked('豸: むじな', 121, 464)" class="bushu" title="むじな">豸</a> 
+<a href="javascript:clicked('貝: かい', 121, 465)" class="bushu" title="かい">貝</a> 
+<a href="javascript:clicked('赤: あか', 123, 471)" class="bushu" title="あか">赤</a> 
+<a href="javascript:clicked('走: はしる', 123, 471)" class="bushu" title="はしる">走</a> 
+<a href="javascript:clicked('足: あし', 123, 472)" class="bushu" title="あし">足</a> 
+<a href="javascript:clicked('身: み', 125, 477)" class="bushu" title="み">身</a> 
+<a href="javascript:clicked('車: くるま', 125, 478)" class="bushu" title="くるま">車</a> 
+<a href="javascript:clicked('辛: からい', 126, 482)" class="bushu" title="からい">辛</a> 
+<a href="javascript:clicked('辰: しんのたつ', 126, 484)" class="bushu" title="しんのたつ">辰</a> 
+<a href="javascript:clicked('辵: はしる', 126, 484)" class="bushu" title="はしる">辵</a> 
+<a href="javascript:clicked('邑: むら', 129, 493)" class="bushu" title="むら">邑</a> 
+<a href="javascript:clicked('酉: さけのとり', 130, 496)" class="bushu" title="さけのとり">酉</a> 
+<a href="javascript:clicked('釆: のごめ', 130, 499)" class="bushu" title="のごめ">釆</a> 
+<a href="javascript:clicked('里: さと', 131, 499)" class="bushu" title="さと">里</a> 
+<br>
+<a href="javascript:clicked('金: かね', 131, 500)" class="bushu" title="かね">金</a> 
+<a href="javascript:clicked('長: ながい', 133, 508)" class="bushu" title="ながい">長</a> 
+<a href="javascript:clicked('門: もん', 133, 508)" class="bushu" title="もん">門</a> 
+<a href="javascript:clicked('阜: ぎふのふ', 134, 511)" class="bushu" title="ぎふのふ">阜</a> 
+<a href="javascript:clicked('隶: れいづくり', 135, 515)" class="bushu" title="れいづくり">隶</a> 
+<a href="javascript:clicked('隹: ふるとり', 135, 515)" class="bushu" title="ふるとり">隹</a> 
+<a href="javascript:clicked('雨: あめ', 136, 517)" class="bushu" title="あめ">雨</a> 
+<a href="javascript:clicked('靑: あお', 137, 520)" class="bushu" title="あお">靑</a> 
+<a href="javascript:clicked('非: あらず', 137, 520)" class="bushu" title="あらず">非</a> 
+<br>
+<a href="javascript:clicked('面: めん', 137, 521)" class="bushu" title="めん">面</a> 
+<a href="javascript:clicked('革: かくのかわ', 137, 521)" class="bushu" title="かくのかわ">革</a> 
+<a href="javascript:clicked('韭: にら', 137, 523)" class="bushu" title="にら">韭</a> 
+<a href="javascript:clicked('音: おと', 137, 523)" class="bushu" title="おと">音</a> 
+<a href="javascript:clicked('頁: おおがい', 138, 524)" class="bushu" title="おおがい">頁</a> 
+<a href="javascript:clicked('風: かぜ', 138, 527)" class="bushu" title="かぜ">風</a> 
+<a href="javascript:clicked('飛: とぶ', 139, 528)" class="bushu" title="とぶ">飛</a> 
+<a href="javascript:clicked('食: しょく', 139, 528)" class="bushu" title="しょく">食</a> 
+<a href="javascript:clicked('首: くび', 139, 530)" class="bushu" title="くび">首</a> 
+<a href="javascript:clicked('香: においこう', 139, 531)" class="bushu" title="においこう">香</a> 
+<br>
+<a href="javascript:clicked('韋: なめしがわ', 137, 523)" class="bushu" title="なめしがわ">韋</a> 
+<a href="javascript:clicked('馬: うま', 140, 531)" class="bushu" title="うま">馬</a> 
+<a href="javascript:clicked('骨: ほね', 140, 534)" class="bushu" title="ほね">骨</a> 
+<a href="javascript:clicked('高: たかい', 141, 535)" class="bushu" title="たかい">高</a> 
+<a href="javascript:clicked('髟: かみがしら', 141, 535)" class="bushu" title="かみがしら">髟</a> 
+<a href="javascript:clicked('鬥: とうがしら', 141, 537)" class="bushu" title="とうがしら">鬥</a> 
+<a href="javascript:clicked('鬯: ちょう', 141, 537)" class="bushu" title="ちょう">鬯</a> 
+<a href="javascript:clicked('鬲: かく', 141, 537)" class="bushu" title="かく">鬲</a> 
+<a href="javascript:clicked('鬼: おに', 141, 537)" class="bushu" title="おに">鬼</a> 
+<br>
+<a href="javascript:clicked('魚: うお', 141, 538)" class="bushu" title="うお">魚</a> 
+<a href="javascript:clicked('鳥: とり', 143, 542)" class="bushu" title="とり">鳥</a> 
+<a href="javascript:clicked('鹵: ろ', 144, 546)" class="bushu" title="ろ">鹵</a> 
+<a href="javascript:clicked('鹿: しか', 144, 547)" class="bushu" title="しか">鹿</a> 
+<a href="javascript:clicked('麥: むぎ', 144, 548)" class="bushu" title="むぎ">麥</a> 
+<a href="javascript:clicked('麻: あさ', 144, 548)" class="bushu" title="あさ">麻</a> 
+<br>
+<a href="javascript:clicked('黃: きいろ', 145, 549)" class="bushu" title="きいろ">黃</a> 
+<a href="javascript:clicked('黍: きび', 145, 549)" class="bushu" title="きび">黍</a> 
+<a href="javascript:clicked('黑: くろ', 145, 549)" class="bushu" title="くろ">黑</a> 
+<a href="javascript:clicked('黹: ふつ', 145, 551)" class="bushu" title="ふつ">黹</a> 
+<br>
+<a href="javascript:clicked('黽: べん', 145, 551)" class="bushu" title="べん">黽</a> 
+<a href="javascript:clicked('鼎: かなえ', 145, 551)" class="bushu" title="かなえ">鼎</a> 
+<a href="javascript:clicked('鼓: つづみ', 145, 552)" class="bushu" title="つづみ">鼓</a> 
+<a href="javascript:clicked('鼠: ねずみ', 145, 552)" class="bushu" title="ねずみ">鼠</a> 
+<br>
+<a href="javascript:clicked('鼻: はな', 146, 552)" class="bushu" title="はな">鼻</a> 
+<a href="javascript:clicked('齊: せい', 146, 553)" class="bushu" title="せい">齊</a> 
+<br>
+<a href="javascript:clicked('齒: は', 146, 553)" class="bushu" title="は">齒</a> 
+<br>
+<a href="javascript:clicked('龍: りゅう', 146, 554)" class="bushu" title="りゅう">龍</a> 
+<a href="javascript:clicked('龜: かめ', 146, 555)" class="bushu" title="かめ">龜</a> 
+<br>
+<a href="javascript:clicked('龠: やく', 146, 555)" class="bushu" title="やく">龠</a> 
+</div>
+
+
+<script src="./scripts/kanjiData.js"></script>
+<script src="./scripts/engine.js"></script>
+</body>
+</html>
