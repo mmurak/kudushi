@@ -74,7 +74,9 @@ document.addEventListener("keydown",  (evt) => {
 });
 
 G.kanjiSelector.addEventListener("click", (evt) => {
-	G.symbol.innerHTML = G.kanjiSelector.options[G.kanjiSelector.selectedIndex].label;
+	let selIndex = G.kanjiSelector.selectedIndex;
+	if (selIndex == -1)  return;
+	G.symbol.innerHTML = G.kanjiSelector.options[selIndex].label;
 	G.currentPage = convertToPhysical(Number(G.kanjiSelector.value), 77);
 	G.kanjiSelector.blur();
 	loadPhysicalPage(G.currentPage);
@@ -119,6 +121,7 @@ function processEnter() {
 			col.value = item[2];
 			G.kanjiSelector.appendChild(col);
 		}
+		G.kanjiSelector.focus();
 	}
 }
 
