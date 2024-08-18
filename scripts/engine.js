@@ -49,8 +49,9 @@ G.dialogueButton.addEventListener("click", (evt) => {
 });
 
 G.clearButton.addEventListener("click", (evt) => {
-			G.yomiField.value = "";
-			G.yomiField.focus();
+	G.yomiField.value = "";
+	G.symbol.innerHTML = "";
+	G.yomiField.focus();
 });
 
 G.searchButton.addEventListener("click", (evt) => {
@@ -66,6 +67,7 @@ document.addEventListener("keydown",  (evt) => {
 	switch (evt.key) {
 		case "Escape" :
 			G.yomiField.value = "";
+			G.symbol.innerHTML = "";
 			G.yomiField.focus();
 		case "Enter" :
 			processEnter();
