@@ -3,11 +3,11 @@ class GlobalManager {
 		this.body = document.getElementById("Body");
 		this.preface = document.getElementById("Preface");
 		this.dialogueButton = document.getElementById("DialogueButton");
+		this.resultBox = document.getElementById("ResultBox");
 		this.dialogueBox = document.getElementById("DialogueBox");
 		this.yomiField = document.getElementById("YomiField");
 		this.searchButton = document.getElementById("SearchButton");
 		this.symbol = document.getElementById("Symbol");
-		this.kanjiSelector = document.getElementById("KanjiSelector");
 		this.prevPageButton = document.getElementById("PrevPageButton");
 		this.nextPageButton = document.getElementById("NextPageButton");
 		this.imageArea = document.getElementById("ImageArea");
@@ -73,18 +73,6 @@ document.addEventListener("keydown",  (evt) => {
 	}
 });
 
-G.kanjiSelector.addEventListener("click", (evt) => {
-	let selIndex = G.kanjiSelector.selectedIndex;
-	if (selIndex == -1)  return;
-	G.symbol.innerHTML = G.kanjiSelector.options[selIndex].label;
-	G.currentPage = convertToPhysical(Number(G.kanjiSelector.value), 77);
-	G.kanjiSelector.blur();
-	loadPhysicalPage(G.currentPage);
-	G.yomiField.value = "";
-	G.yomiField.focus();
-	processEnter();
-});
-
 G.prevPageButton.addEventListener("click", (evt) => {
 	prevPage();
 });
@@ -93,21 +81,11 @@ G.nextPageButton.addEventListener("click", (evt) => {
 	nextPage();
 });
 
-
-function clearSelector() {
-	while(G.kanjiSelector.firstChild) {
-		G.kanjiSelector.removeChild(G.kanjiSelector.lastChild);
-	}
-}
-
 function processEnter() {
-	clearSelector();
-	G.kanjiSelector.size = 0;
+	G.resultBox.innerHTML = "";
 	let phon = G.yomiField.value;
 	if (phon in G.onKunDic) {
 		let candidates = G.onKunDic[phon].split(/:/);
-//		G.kanjiSelector.size = Math.min(candidates.length, 10);
-		G.kanjiSelector.size = candidates.length
 		let tempArray = [];
 		for (let ch of candidates) {
 			tempArray.push([ch + ": " + kanjiData[ch][1], kanjiData[ch][0], kanjiData[ch][2]]);
@@ -115,13 +93,13 @@ function processEnter() {
 		tempArray.sort((a, b) => {
 			return Number(a[1]) - Number(b[1]);
 		});
+		let resultString = "";
 		for (item of tempArray) {
-			let col = document.createElement("option");
-			col.text = item[0];
-			col.value = item[2];
-			G.kanjiSelector.appendChild(col);
+			resultString += "<a href='javascript:selected(\"" + item[0] + "\", " + item[2] + ");'>" + item[0] + "</a><br>";
 		}
-		G.kanjiSelector.focus();
+		G.resultBox.innerHTML = resultString;
+		G.body.style = "background-color: #ccc;";
+		G.resultBox.style = "display: block;";
 	}
 }
 
@@ -150,6 +128,14 @@ function nextPage() {
 		G.currentPage += 1;
 		loadPhysicalPage(G.currentPage);
 	}
+}
+
+function selected(char, pno) {
+	G.currentPage = convertToPhysical(pno, 77);
+	loadPhysicalPage(G.currentPage);
+	G.symbol.innerHTML = char;
+	G.resultBox.style = "display: none;";
+	G.body.style = "background-color: white;";
 }
 
 function clicked(char, sakuin, honbun) {
