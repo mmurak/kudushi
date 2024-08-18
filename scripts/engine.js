@@ -58,6 +58,11 @@ G.searchButton.addEventListener("click", (evt) => {
 });
 
 document.addEventListener("keydown",  (evt) => {
+	if (G.resultBox.style.display == "block") {
+		G.resultBox.style = "display: none;";
+		G.body.style = "background-color: white;";
+		return;
+	}
 	switch (evt.key) {
 		case "Escape" :
 			G.yomiField.value = "";
