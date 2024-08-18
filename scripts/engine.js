@@ -7,6 +7,7 @@ class GlobalManager {
 		this.dialogueBox = document.getElementById("DialogueBox");
 		this.yomiField = document.getElementById("YomiField");
 		this.searchButton = document.getElementById("SearchButton");
+		this.clearButton = document.getElementById("ClearButton");
 		this.symbol = document.getElementById("Symbol");
 		this.prevPageButton = document.getElementById("PrevPageButton");
 		this.nextPageButton = document.getElementById("NextPageButton");
@@ -45,6 +46,11 @@ G.preface.addEventListener("click", (evt) => {
 G.dialogueButton.addEventListener("click", (evt) => {
 	G.body.style = "background-color: #ccc;";
 	G.dialogueBox.style = "display: block;";
+});
+
+G.clearButton.addEventListener("click", (evt) => {
+			G.yomiField.value = "";
+			G.yomiField.focus();
 });
 
 G.searchButton.addEventListener("click", (evt) => {
